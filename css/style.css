@@ -1,0 +1,1093 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.navbar {
+  background-color: #0b0f19;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 30px;
+}
+.navbar ul {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+.navbar ul li {
+  list-style: none;
+}
+.navbar ul li a {
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 14px;
+  transition: 0.3s ease-in-out;
+}
+.navbar ul li a:hover {
+  color: #00ffcc;
+}
+.navbar ul .btn {
+  border: 2px solid #00ffcc;
+  color: #00ffcc;
+  padding: 10px 30px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 700;
+  background-color: #1d1a28;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+.navbar ul .btn:is(:hover, :focus) {
+  background: #00ffcc;
+  color: #1d1a28;
+}
+.navbar > .logo {
+  display: flex;
+  align-items: center;
+}
+.navbar > .logo img {
+  max-height: 90px;
+  width: auto;
+}
+.nav-list .logo {
+  display: none;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 20px;
+}
+.nav-list .logo .close {
+  background-color: transparent;
+  color: #fff;
+  font-size: 20px;
+  border: none;
+}
+.hamburger {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  cursor: pointer;
+}
+.hamburger .line {
+  width: 25px;
+  height: 3px;
+  border-radius: 5px;
+  background-color: #fff;
+}
+.hero {
+  background: url(../images/hero-bg.jpg) no-repeat;
+  background-size: cover;
+  background-position: right;
+  height: 90vh;
+  max-height: 1000px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0px 30px;
+}
+.hero .main .content {
+  max-width: 60%;
+}
+
+.hero .content h2 {
+  font-size: 30px;
+  color: #fff;
+  line-height: 62px;
+}
+.hero .content strong {
+  color: #00ffcc;
+}
+.hero .meta-wrapper {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+.hero .meta-wrapper .badge span:nth-child(1) {
+  background-color: #fff;
+  color: #0b0f19;
+  font-weight: 700;
+  padding: 5px 10px;
+  font-size: 12px;
+  margin-right: 0.5rem;
+}
+.hero .meta-wrapper .badge span:nth-child(2) {
+  background-color: #0b0f19;
+  color: #fff;
+  border: 2px solid #fff;
+  font-weight: 700;
+  padding: 3px 10px;
+  font-size: 12px;
+}
+.hero .meta-wrapper .genre i {
+  text-decoration: none;
+  color: #00ffcc;
+  font-size: 15px;
+  font-weight: 500;
+  transition: 0.3s ease-in-out;
+}
+
+.hero .meta-wrapper .date-time span {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+}
+.hero .meta-wrapper .date-time span:nth-child(1) {
+  margin-right: 0.5rem;
+}
+.hero .date-time i {
+  color: #00ffcc;
+}
+.hero .watch-btn {
+  margin-top: 3.4rem;
+}
+.hero .watch-btn i {
+  margin-right: 0.5rem;
+}
+.hero .content .watch-btn button {
+  border: 2px solid #00ffcc;
+  color: #fff;
+  padding: 13px 30px;
+  border-radius: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 13px;
+  font-weight: 700;
+  background-color: #1d1a28;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+.hero .content .watch-btn button:is(:hover, :focus) {
+  background: #00ffcc;
+  color: #1d1a28;
+}
+.upcoming-movie {
+  background: url(../images/upcoming-bg.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 100px 30px;
+}
+.upcoming-movie .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.upcoming-movie .header .subtitle small {
+  font-size: 12px;
+  color: #00ffcc;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.upcoming-movie .header .subtitle h4 {
+  font-size: 40px;
+  color: #fff;
+}
+.upcoming-movie .header .buttons {
+  display: flex;
+  gap: 1rem;
+}
+.upcoming-movie .header .buttons button {
+  color: #fff;
+  background-color: #21232b;
+  font-weight: 500;
+  font-size: 12px;
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: 2px solid #2e303e;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.upcoming-movie .header .buttons button:focus {
+  border: 2px solid #00ffcc;
+}
+
+.upcoming-movie .movie-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3rem;
+}
+.wrapper {
+  width: 100%;
+  position: relative;
+}
+
+.wrapper .movie-carousel {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% / 3) - 15px);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 30px;
+  border-radius: 8px;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+.movie-carousel::-webkit-scrollbar {
+  display: none;
+}
+.movie-carousel.no-transition {
+  scroll-behavior: auto;
+}
+.movie-carousel.dragging {
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+}
+.movie-carousel.dragging .card {
+  cursor: grab;
+  user-select: none;
+}
+.movie-carousel :where(.card) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.movie-carousel .card {
+  scroll-snap-align: start;
+  list-style: none;
+  background: transparent;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+.movie-carousel .card .img img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.movie-carousel .card .title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+  width: 100%;
+}
+.movie-carousel .card .title a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
+}
+.movie-carousel .card .title a:hover {
+  color: #00ffcc;
+}
+.movie-carousel .card .title span {
+  color: #00ffcc;
+  font-weight: 600;
+  font-size: 14px;
+}
+.movie-carousel .card .footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}
+.movie-carousel .card .footer span {
+  color: #00ffcc;
+  padding: 3px 10px;
+  border: 2px solid #fff;
+  font-size: 12px;
+  font-weight: 600;
+}
+.movie-carousel .card .footer .time-rating span {
+  color: #fff;
+  padding: 0px;
+  border: none;
+}
+.movie-carousel .card .footer .time-rating i {
+  color: #00ffcc;
+  margin-right: 0.3rem;
+}
+
+/* ==========================================
+   SECTION CONTAINERS
+========================================== */
+.movie-services-section {
+  background-color: #0f0f12;
+  color: #ffffff;
+  font-family:
+    "Poppins",
+    system-ui,
+    -apple-system,
+    sans-serif;
+  padding: 80px 20px;
+  overflow: hidden;
+}
+
+.service-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+/* ==========================================
+   LEFT COLUMN: VISUAL / BANNER
+========================================== */
+.service-visual {
+  position: relative;
+  width: 100%;
+}
+
+.image-wrapper {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(0, 255, 204, 0.2);
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.image-wrapper:hover img {
+  transform: scale(1.04);
+}
+
+/* Badge Overlay */
+.badge-overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(15, 15, 18, 0.85);
+  backdrop-filter: blur(8px);
+  padding: 10px 18px;
+  border-radius: 50px;
+  border: 1px solid rgba(0, 255, 204, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #00ffcc;
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* ==========================================
+   RIGHT COLUMN: CONTENT & FEATURES
+========================================== */
+.service-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.sub-heading {
+  color: #00ffcc;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.main-title {
+  font-size: 2.3rem;
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 18px;
+  background: linear-gradient(180deg, #ffffff 0%, #d1d1d1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.description {
+  color: #a0a0ab;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* ==========================================
+   FEATURE CARDS
+========================================== */
+.service-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 35px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.service-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  background: #18181c;
+  padding: 18px 20px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(0, 255, 204, 0.5);
+  box-shadow: 0 10px 25px rgba(0, 255, 204, 0.15);
+}
+
+.icon-box {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 255, 204, 0.2),
+    rgba(0, 255, 204, 0.05)
+  );
+  border: 1px solid rgba(0, 255, 204, 0.4);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #00ffcc;
+  font-size: 1.3rem;
+}
+
+.card-text h5 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0 0 6px 0;
+  color: #ffffff;
+}
+
+.card-text p {
+  font-size: 0.9rem;
+  color: #a0a0ab;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ==========================================
+   BUTTON & CTA
+========================================== */
+.btn-download {
+  /* Layout & Flexible Width */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  max-width: 100%; /* Prevents button from overflowing its parent container */
+  box-sizing: border-box; /* Includes padding in the total element width */
+
+  /* Typography */
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  white-space: normal; /* Allows text to wrap on very narrow screens if needed */
+  text-align: center;
+
+  /* Visual Styles (Responsive Padding) */
+  background: #00ffcc;
+  color: #0f0f12;
+  padding: 14px 24px; /* Reduced side padding slightly for mobile safety */
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 8px 20px rgba(0, 255, 204, 0.3);
+
+  /* Cross-Platform Normalization */
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+  user-select: none;
+
+  transition: all 0.3s ease;
+}
+
+.btn-download:hover {
+  background: #33ffd6;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(0, 255, 204, 0.5);
+}
+
+/* ==========================================
+   MEDIA QUERIES (RESPONSIVE DESIGN)
+========================================== */
+
+/* Tablets / Medium Displays (Under 992px) */
+@media screen and (max-width: 992px) {
+  .service-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .main-title {
+    font-size: 2rem;
+  }
+
+  .service-visual {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+}
+
+/* Mobile Devices (Under 576px) */
+@media screen and (max-width: 576px) {
+  .movie-services-section {
+    padding: 50px 15px;
+  }
+
+  .main-title {
+    font-size: 1.6rem;
+  }
+
+  .description {
+    font-size: 0.92rem;
+  }
+
+  .service-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .icon-box {
+    width: 42px;
+    height: 42px;
+    font-size: 1.1rem;
+  }
+
+  .btn-download {
+    width: 100%; /* Optional: makes the button full-width on mobile */
+    padding: 12px 16px; /* Slimmer padding for smaller devices */
+    font-size: 0.95rem; /* Slightly smaller font to guarantee fit */
+  }
+
+  .badge-overlay {
+    font-size: 0.8rem;
+    padding: 8px 14px;
+    bottom: 12px;
+    left: 12px;
+  }
+}
+.top-movie {
+  background: url(../images/top-rated-bg.jpg) no-repeat;
+  background-size: cover;
+  padding: 100px 30px;
+}
+.top-movie .header,
+.tv-series .header {
+  text-align: center;
+}
+.top-movie .header small,
+.tv-series .header small {
+  color: #00ffcc;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 500;
+}
+.top-movie .header h4,
+.tv-series .header h4 {
+  color: #fff;
+  font-size: 40px;
+}
+.top-movie .top-movie-main .buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+.top-movie .top-movie-main .buttons button {
+  background-color: #0a0f0f;
+  color: #cecaca;
+  border-radius: 5px;
+  font-size: 13px;
+  padding: 12px 20px;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+  border: 2px solid #000000cc;
+  transition: 0.3s ease-in-out;
+}
+.top-movie .top-movie-main .buttons button:is(:hover, :focus) {
+  color: #00ffcc;
+  text-shadow: 0 3px 25px hsl(57deg 97% 45% / 50%);
+}
+.same .wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  justify-content: center;
+  row-gap: 50px;
+  column-gap: 30px;
+  margin-top: 3rem;
+}
+.same .wrapper .card {
+  width: 100%;
+}
+.movie-card .card .img img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+.movie-card .card .title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+  width: 100%;
+}
+.movie-card .card .title a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
+}
+.movie-card .card .title a:hover {
+  color: #00ffcc;
+}
+.movie-card .card .title span {
+  color: #00ffcc;
+  font-weight: 600;
+  font-size: 14px;
+}
+.movie-card .card .footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}
+.movie-card .card .footer span {
+  color: #00ffcc;
+  padding: 3px 10px;
+  border: 2px solid #fff;
+  font-size: 12px;
+  font-weight: 600;
+}
+.movie-card .card .footer .time-rating span {
+  color: #fff;
+  padding: 0px;
+  border: none;
+}
+.movie-card .card .footer .time-rating i {
+  color: #00ffcc;
+  margin-right: 0.3rem;
+}
+
+.tv-series {
+  background: url(../images/tv-series-bg.jpg) no-repeat;
+  background-size: cover;
+  padding: 100px 30px;
+}
+
+/* --- Footer Base Styling --- */
+.site-footer {
+  background-color: #0b0f19; /* Dark cinematic background */
+  color: #a0a5b5;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  padding: 50px 20px 20px 20px;
+  border-top: 1px solid #1f2330;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+/* --- Brand Section --- */
+.footer-brand {
+  flex: 1 1 300px;
+}
+
+.footer-brand .logo {
+  font-size: 24px;
+  font-weight: 800;
+  color: #ffffff;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+
+.footer-brand p {
+  margin: 15px 0 20px 0;
+  color: #81889c;
+  max-width: 320px;
+}
+
+/* Feature Pills (Highlights "Free" & "No Account") */
+.feature-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pill {
+  background-color: #1a1d28;
+  color: #e2e8f0;
+  border: 1px solid #2a2e3d;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* --- Navigation Link Groups --- */
+.footer-links {
+  display: flex;
+  flex: 2 1 500px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.link-group h4 {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+
+.link-group ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.link-group ul li {
+  margin-bottom: 10px;
+}
+
+.link-group ul li a {
+  color: #94a3b8;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.link-group ul li a:hover {
+  color: #00ffcc; /* Red accent hover effect */
+}
+
+/* --- Divider --- */
+.footer-divider {
+  border: 0;
+  height: 1px;
+  background-color: #1f2330;
+  margin: 40px auto 20px auto;
+  max-width: 1200px;
+}
+
+/* --- Bottom Disclaimer & Copyright Bar --- */
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  font-size: 12px;
+  color: #64748b;
+}
+
+.disclaimer {
+  max-width: 700px;
+}
+
+.disclaimer strong {
+  color: #00ffcc;
+}
+
+.copyright p {
+  color: #00ffcc;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+  .site-footer {
+    padding-top: 30px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+.back-to-top {
+  position: fixed;
+  opacity: 0;
+  bottom: 20px;
+  right: 20px;
+  z-index: 2;
+  background-color: #00ffcc;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  padding: 15px;
+}
+.back-to-top.show {
+  opacity: 1;
+  transition:
+    opacity 1s,
+    transform 1s;
+}
+
+@media only screen and (max-width: 909px) {
+  .hamburger {
+    display: flex;
+  }
+  .navbar .nav-list {
+    position: fixed;
+    right: -100%;
+    top: 0;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+    background-color: #171d21;
+    width: 100%;
+    max-width: 300px;
+    height: 100vh;
+    transition: 0.3s;
+    z-index: 4;
+    padding-top: 1rem;
+  }
+  .nav-list li {
+    width: 100%;
+    border-bottom: 1px solid hsla(0, 0%, 100%, 0.1);
+    padding: 0px 25px 20px 20px;
+  }
+  .nav-list .home {
+    margin-top: 1rem;
+    border-top: 1px solid hsla(0, 0%, 100%, 0.1);
+    padding-top: 15px;
+  }
+  .nav-list .btn {
+    margin: 20px 20px;
+  }
+  .nav-list.active {
+    right: 0;
+  }
+  .nav-list.active .logo {
+    display: flex;
+    width: inherit;
+  }
+  .hero {
+    background-position: center;
+  }
+  .hero .content {
+    max-width: max-content !important;
+  }
+  .hero .content p {
+    font-size: 24px;
+  }
+  .hero .content h2 {
+    font-size: 42px;
+  }
+  .hero .content .badge span {
+    font-size: 11px;
+  }
+  .hero .content .genre a {
+    font-size: 14px;
+  }
+  .upcoming-movie .header {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+    align-items: center;
+  }
+  .service .main {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .service img {
+    max-width: max-content;
+  }
+  .service .content {
+    width: 80%;
+  }
+
+  .movie-detail .main {
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .upcoming-movie .wrapper .movie-carousel {
+    grid-auto-columns: calc((100% / 2) - 15px);
+  }
+  .same .wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .navbar > .logo img {
+    max-height: 48px; /* Compact height for mobile top bars */
+    margin-left: -30px;
+    margin-top: 10px;
+  }
+}
+@media only screen and (max-width: 549px) {
+  .hero .content h2 {
+    font-size: 20px;
+  }
+  .upcoming-movie .header .subtitle h4,
+  .service .content h4,
+  .top-movie .header h4,
+  .tv-series .header h4 {
+    font-size: 32px;
+  }
+  .upcoming-movie .wrapper .movie-carousel {
+    grid-auto-columns: calc((100%) - 15px);
+  }
+  .same .wrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .service .content {
+    width: 90%;
+  }
+  .service .service-card {
+    flex-direction: column;
+    align-items: flex-start !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .upcoming-movie .wrapper .movie-carousel {
+    grid-auto-columns: calc((100% / 4) - 15px);
+  }
+  .same .wrapper {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+/* ==========================================================================
+   1. SMALL MOBILE DEVICES (Portrait Phones, 320px - 480px)
+   Examples: Older iPhones, SE, Budget Androids
+   ========================================================================== */
+@media screen and (max-width: 480px) {
+  .footer-container {
+    padding: 0 10px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .pill {
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+}
+
+/* ==========================================================================
+   2. LARGE MOBILE / PHONES (Landscape & Large Phones, 481px - 767px)
+   Examples: iPhone Pro Max, Samsung Ultra series, Foldables (unfolded)
+   ========================================================================== */
+@media screen and (min-width: 481px) and (max-width: 767px) {
+  .footer-links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for links */
+    gap: 25px;
+  }
+}
+
+/* ==========================================================================
+   3. TABLETS & PORTRAIT IPADS (768px - 1024px)
+   Examples: iPad mini, iPad Air/Pro (Portrait), Android Tablets
+   ========================================================================== */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .site-footer {
+    padding: 40px 30px;
+  }
+
+  .footer-container {
+    gap: 30px;
+  }
+
+  .footer-brand {
+    flex: 1 1 100%; /* Brand occupies top row on tablets */
+    margin-bottom: 20px;
+  }
+
+  .footer-links {
+    flex: 1 1 100%;
+    justify-content: space-between;
+  }
+}
+
+/* ==========================================================================
+   4. LAPTOPS & SMALL DESKTOPS (1025px - 1440px)
+   Examples: MacBook Air/Pro 13"/14", standard 1080p laptop screens
+   ========================================================================== */
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+  .footer-container {
+    max-width: 1100px;
+  }
+}
+
+/* ==========================================================================
+   5. LARGE DESKTOPS & MONITORS (1441px - 1920px)
+   Examples: 24"-27" Desktop Monitors, iMacs
+   ========================================================================== */
+@media screen and (min-width: 1441px) and (max-width: 1920px) {
+  .footer-container {
+    max-width: 1400px;
+  }
+
+  .site-footer {
+    font-size: 15px; /* Slightly larger readable text on big screens */
+  }
+}
+
+/* ==========================================================================
+   6. ULTRA-WIDE & 4K MONITORS (1921px and above)
+   Examples: 34"+ Curved Monitors, 4K/8K TV Displays
+   ========================================================================== */
+@media screen and (min-width: 1921px) {
+  .footer-container {
+    max-width: 1800px;
+  }
+
+  .site-footer {
+    font-size: 16px;
+    padding: 60px 40px 30px 40px;
+  }
+
+  .footer-brand .logo {
+    font-size: 30px;
+  }
+}
+
+/* ==========================================================================
+   SPECIAL MEDIA QUERIES (Accessibility & Orientation)
+   ========================================================================== */
+
+/* Dark/Light Mode Preference (If user's OS is set to Light mode) */
+@media (prefers-color-scheme: light) {
+  /* Optional: Adjust colors if you ever support light mode */
+}
+
+/* Reduced Motion (For users who prefer disabled animations) */
+@media (prefers-reduced-motion: reduce) {
+  .link-group ul li a {
+    transition: none;
+  }
+}
